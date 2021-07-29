@@ -3,7 +3,7 @@ import 'package:shop_app_api_udemy/Screen/login/regester.dart';
 import 'package:shop_app_api_udemy/component.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
                   'Login now to browse our hot offer',
                   style: Theme.of(context)
                       .textTheme
-                      .bodyText1!
+                      .bodyText1
                       .copyWith(color: Colors.grey),
                 ),
                 SizedBox(

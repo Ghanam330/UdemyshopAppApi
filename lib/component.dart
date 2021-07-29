@@ -12,37 +12,34 @@ void navigateAndFinish(context, widget) => Navigator.pushAndRemoveUntil(
     );
 
 Widget defaultFormField({
-  required TextEditingController controller,
-  required TextInputType type,
-  Function? onSubmit,
-  Function? onChange,
-  required Function validate,
-  required String label,
-  required IconData prefix,
-  IconData? suffix,
-  Function? onTap,
+  @required TextEditingController controller,
+  @required TextInputType type,
+  Function onSubmit,
+  Function onChange,
+  @required Function validate,
+  @required String label,
+  @required IconData prefix,
+  IconData suffix,
+  Function onTap,
   bool isPassword = false,
-  Function? suffixPressed,
+  Function suffixPressed,
   bool isClickable = true,
 }) =>
     TextFormField(
       controller: controller,
-      onFieldSubmitted:(value){onSubmit!();} ,
-      onChanged: (v){onChange!();},
-      onTap: (){onTap!();},
+      onFieldSubmitted:onSubmit ,
+      onChanged:onChange,
+      onTap: onTap,
       enabled: isClickable,
-      validator:(value)=>validate(),
+      validator:validate,
       obscureText: isPassword,
       decoration: InputDecoration(
         labelText: label,
         prefixIcon: Icon(prefix),
         suffixIcon: suffix != null
             ? IconButton(
-            onPressed:
-                () {
-                   suffixPressed!();
-                }
-             , icon: Icon(suffix))
+            onPressed: suffixPressed,
+              icon: Icon(suffix))
             : null,
         border: OutlineInputBorder(),
       ),
@@ -51,8 +48,8 @@ Widget defaultFormField({
 Widget defaultButton({
   double width = double.infinity,
   Color background = Colors.blue,
-  required Function function,
-  required String text,
+  @required Function function,
+  @required String text,
   double radius = 0.0,
   bool isUpperCase = true,
 }) =>
@@ -72,8 +69,8 @@ Widget defaultButton({
     );
 
 Widget defaultTextButton({
-  required Function function,
-  required String text,
+  @required Function function,
+  @required String text,
 }) =>
     TextButton(
         onPressed:(){
